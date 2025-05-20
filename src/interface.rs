@@ -74,6 +74,7 @@ async fn new_xfrm(
         .link()
         .set(0)
         .name(interface.clone())
+        .mtu(1430)
         .up()
         .controller(master_devidx)
         .execute()
@@ -243,7 +244,7 @@ async fn try_handle_eexist(e: Error, my_netns_name: &str, interface: &str, alt_n
       if emsg.raw_code().abs() == 17 { // EEXIST
         // if_id has changed but we are creating the new one before deleting the old one, and so altname conflicts
         error!(
-          "Failed to move {} to netns: {:?}\n[Trying to delete by altname from netns {} and try again]",
+          "Failed to move {} to netns: {} [Trying to delete by altname from netns {} and try again]",
           interface, e, my_netns_name,
         );
         if let Err(e) = netns::operate_in_netns(my_netns_name.to_owned(), del_by_altname(alt_names[0].to_owned())).await {
