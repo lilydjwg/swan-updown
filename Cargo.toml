@@ -1,7 +1,7 @@
 [package]
 name = "swan-updown"
-version = "0.3.0"
-edition = "2021"
+version = "0.3.1"
+edition = "2024"
 authors = ["Zhang Zongyu <zongyu@novazy.net>"]
 license = "MIT"
 repository = "https://github.com/6-6-6/swan-updown"
@@ -16,14 +16,14 @@ categories = ["command-line-utilities"]
 rtnetlink = "0.14.1"
 netlink-packet-route = "0.19.0"
 netlink-packet-utils = "0.5.2"
-futures = "0.3.30"
-tokio = { version = "1.37.0", default-features = false, features = ["rt-multi-thread", "macros", "time", "sync"] }
-nix = { version = "0.27.1", default-features = false, features = ["sched"]}
-clap = { version = "4.5.4", features = ["derive"] }
+futures = "0.3.31"
+tokio = { version = "1.45.0", default-features = false, features = ["rt-multi-thread", "macros", "time", "sync"] }
+nix = { version = "0.30.1", default-features = false, features = ["sched"]}
+clap = { version = "4.5.38", features = ["derive"] }
 hex = { version = "0.4.3" }
-syslog = "6.1.0"
-env_logger = { version = "0.11.3", default-features = false }
-log = { version = "0.4.21", features = ["release_max_level_debug"] }
+syslog = "7.0.0"
+env_logger = { version = "0.11.8", default-features = false }
+log = { version = "0.4.27", features = ["release_max_level_debug"] }
 eyre = "0.6.12"
 
 [profile.release]
