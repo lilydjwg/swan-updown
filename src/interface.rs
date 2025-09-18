@@ -74,7 +74,7 @@ async fn new_xfrm(
         .link()
         .set(0)
         .name(interface.clone())
-        .mtu(1430)
+        .mtu(1400)
         .up()
         .controller(master_devidx)
         .execute()
